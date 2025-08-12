@@ -1,0 +1,11 @@
+const http = require("http")
+
+const app = http.createServer((request, response) => {
+    response.writeHead(200, {"Content-Type": "text/plain"})
+    response.end("Hola Muando")
+})
+
+const PORT = 3000
+app.listen(PORT)
+console.log(`La API esta corriendo en el puerto: ${PORT}`)
+

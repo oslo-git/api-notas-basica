@@ -28,6 +28,11 @@ let notas = [
         contenido: "Hola maundo 4",
         autor:"Fernando",
     },
+    {
+        id: 5,
+        contenido: "Hola maundo 5",
+        autor:"Gerardo",
+    },
 ]
 
 app.get("/",(request, response, next) =>{

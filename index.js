@@ -57,8 +57,6 @@ app.post("/api/notas", (request, response) => {
         autor: nota.autor
     }
     notas = [...notas,nueva_nota]
-    
-
     response.json(nueva_nota)
 })
 

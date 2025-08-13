@@ -43,6 +43,12 @@ app.get("/notas/:id", (request, response) => {
     }
 })
 
+app.delete("/notas/:id", (request, response) => {
+    const id = Number(request.params.id)
+    notas = notas.filter((nota) => nota.id != id)
+    response.status(204).end()
+})
+
 const PORT = 3005
 app.listen(PORT, () => {
     console.log(`La API esta corriendo en el puerto: ${PORT}`)

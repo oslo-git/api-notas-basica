@@ -35,7 +35,12 @@ app.get("/notas", (request, response) => {
 app.get("/notas/:id", (request, response) => {
     const id = Number(request.params.id)
     const nota = notas.find(nota => nota.id === id)
-    response.json(nota)
+    
+    if (nota){
+        response.json(nota)
+    }else{
+        response.status(404).end()
+    }
 })
 
 const PORT = 3005

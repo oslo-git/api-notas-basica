@@ -1,6 +1,10 @@
+const cors = require("cors")
 const express = require("express")
+
 const app = express()
 app.use(express.json())
+app.use(cors())
+
 let notas = [
     {
         id: 1,
@@ -60,7 +64,13 @@ app.post("/api/notas", (request, response) => {
     response.json(nueva_nota)
 })
 
-const PORT = 3005
+app.use((request, response) => {
+    response.status(404).json({
+        error: "No encontrado esta ruta"
+    })
+})
+
+const PORT = 3001
 app.listen(PORT, () => {
     console.log(`La API esta corriendo en el puerto: ${PORT}`)
 })
